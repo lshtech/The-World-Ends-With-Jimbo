@@ -16,7 +16,7 @@ local stuffToAdd = {}
 
 --JokerDisplay mod integration
 if SMODS.Mods["JokerDisplay"] then
-	JOKER_DISPLAY = SMODS.load_file(mod_path .. "/JokerDisplayIntegration.lua")()
+	JOKER_DISPLAY = SMODS.load_file("/JokerDisplayIntegration.lua")()
 end
 
 -- G.localization.descriptions["Other"]["p_twewy_gatitoPack"] = {
@@ -233,7 +233,7 @@ table.insert(stuffToAdd, {
 local files = NFS.getDirectoryItems(mod_path.."pins")
 for _, file in ipairs(files) do
     print("Loading file "..file)
-    local f, err = SMODS.load_file(mod_path.."pins/"..file)
+    local f, err = SMODS.load_file("pins/"..file)
     if err then print("Error loading file: "..err) else
       local curr_obj = f()
       if true then
